@@ -9,7 +9,7 @@
 
 		var i, l;
 
-		setInterval(function() {
+		this.interval = setInterval(function() {
 			this.update();
 			i = 0;
 			l = this.callbacks.length;
@@ -38,6 +38,11 @@
 
 	TimerModel.prototype.remove = function(callback) {
 		this.callbacks.splice(this.callbacks.indexOf(callback), 1);
+	};
+
+	TimerModel.prototype.dispose = function() {
+		this.callbacks.length = 0;
+		clearInterval(this.interval);
 	};
 
 	clock.TimerModel = TimerModel;
