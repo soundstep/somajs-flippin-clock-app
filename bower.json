@@ -1,0 +1,10 @@
+{
+	"name": "soma.js clock application",
+	"version": "0.0.1",
+	"dependencies": {
+		"soma.js": "*",
+		"soma-template": "*",
+		"mocha": "*",
+		"expect": "*"
+	}
+}

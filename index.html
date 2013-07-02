@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>soma.js - Clock demo</title>
+	<title>soma.js - Clock application</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css" media="all"/>
 </head>
 <body>
@@ -17,8 +17,8 @@
 
 <!--LIBS-->
 
-<script type="text/javascript" src="js/libs/soma.js"></script>
-<script type="text/javascript" src="js/libs/soma-template.js"></script>
+<script type="text/javascript" src="components/soma.js/build/soma-v2.0.3.min.js"></script>
+<script type="text/javascript" src="components/soma-template/build/soma-template-v0.2.1.min.js"></script>
 
 <!--APP-->
 
@@ -32,8 +32,10 @@
 <script type="text/javascript" src="js/app/views/clocks/analog/needle-minutes.js"></script>
 <script type="text/javascript" src="js/app/views/clocks/analog/needle-hours.js"></script>
 <script type="text/javascript" src="js/app/views/clocks/polar/polar.js"></script>
-
 <script type="text/javascript" src="js/app/clock.js"></script>
+<script type="text/javascript">
+	var clockDemo = new ClockDemo(document.querySelector('.clock-app'));
+</script>
 
 <script type="text/javascript">
 

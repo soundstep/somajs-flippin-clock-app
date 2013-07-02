@@ -27,10 +27,14 @@
 		},
 		start: function() {
 			this.dispatcher.dispatch('create', 'analog');
+		},
+		dispose: function() {
+			var timerModel = this.injector.getValue('timer');
+			timerModel.dispose();
+			this.element = null;
 		}
 	});
 
-	var clockDemo = new ClockDemo(document.querySelector('.clock-app'));
-
+	clock.ClockDemo = ClockDemo;
 
 })(window.clock = window.clock || {}, soma);

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>soma.js - Clock application tests</title>
+	<link rel="stylesheet" href="../components/mocha/mocha.css"/>
+</head>
+<body>
+
+	<div id="mocha"></div>
+
+	<!--LIBS-->
+
+	<script src="../components/mocha/mocha.js"></script>
+	<script src="../components/expect/expect.js"></script>
+
+	<script>
+		mocha.setup({
+			ui: 'bdd',
+			timeout: 5000
+		});
+	</script>
+
+	<!--APP-->
+
+	<script src="../components/soma.js/build/soma-v2.0.3.min.js"></script>
+	<script src="../components/soma-template/build/soma-template-v0.2.1.min.js"></script>
+
+	<script type="text/javascript" src="../js/app/models/timer.js"></script>
+	<script type="text/javascript" src="../js/app/mediators/clock.js"></script>
+	<script type="text/javascript" src="../js/app/views/selector.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/digital/digital.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/analog/analog.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/analog/face.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/analog/needle-seconds.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/analog/needle-minutes.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/analog/needle-hours.js"></script>
+	<script type="text/javascript" src="../js/app/views/clocks/polar/polar.js"></script>
+	<script type="text/javascript" src="../js/app/clock.js"></script>
+
+	<!--HELPERS-->
+
+	<script src="helpers/events.js"></script>
+
+	<!--SPECS-->
+
+	<script src="specs/facade.js"></script>
+	<script src="specs/selector.js"></script>
+	<script src="specs/digital.js"></script>
+	<script src="specs/analog.js"></script>
+	<script src="specs/polar.js"></script>
+	<script src="specs/mediator.js"></script>
+	<script src="specs/timer.js"></script>
+
+	<script>
+		var runner = mocha.run();
+	</script>
+
+</body>
+</html>
