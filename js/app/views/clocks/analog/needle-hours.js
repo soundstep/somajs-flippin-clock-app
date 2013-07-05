@@ -26,20 +26,22 @@
 	};
 
 	NeedleHours.prototype.draw = function(context) {
-		var theta = (30 * Math.PI / 180);
-		var x = this.center + this.size * Math.cos(((this.hours + this.minutes/60 + this.seconds/3600) * theta) - Math.PI/2);
-		var y = this.center + this.size * Math.sin(((this.hours + this.minutes/60 + this.seconds/3600) * theta) - Math.PI/2);
-		context.save();
-		context.lineWidth = 5;
-		context.strokeStyle = '#015666';
-		context.lineJoin = 'round';
-		context.lineCap = 'round';
-		context.beginPath();
-		context.moveTo(x,y);
-		context.lineTo(this.center, this.center);
-		context.closePath();
-		context.stroke();
-		context.restore();
+		if (context) {
+			var theta = (30 * Math.PI / 180);
+			var x = this.center + this.size * Math.cos(((this.hours + this.minutes/60 + this.seconds/3600) * theta) - Math.PI/2);
+			var y = this.center + this.size * Math.sin(((this.hours + this.minutes/60 + this.seconds/3600) * theta) - Math.PI/2);
+			context.save();
+			context.lineWidth = 5;
+			context.strokeStyle = '#015666';
+			context.lineJoin = 'round';
+			context.lineCap = 'round';
+			context.beginPath();
+			context.moveTo(x,y);
+			context.lineTo(this.center, this.center);
+			context.closePath();
+			context.stroke();
+			context.restore();
+		}
 	};
 
 	NeedleHours.prototype.dispose = function() {

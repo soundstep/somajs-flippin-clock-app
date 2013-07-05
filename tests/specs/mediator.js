@@ -1,3 +1,9 @@
+if (typeof require !== 'undefined') {
+	// the following code is to perform the tests in a command line
+	var expect = require('./../../components/expect/expect');
+	var clock = require('./../helpers/dom');
+}
+
 describe("clock mediator tests", function () {
 
 	var container;
