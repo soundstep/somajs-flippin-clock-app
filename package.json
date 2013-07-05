@@ -1,0 +1,24 @@
+{
+  "name": "somajs-flippin-clock-app",
+  "description": "soma.js clock application",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Romuald Quantin",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soundstep/somajs-flippin-clock-app.git"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": ["soma.js", "clock", "application", "flippin", "awesome"],
+  "dependencies": {},
+  "devDependencies": {
+	  "jsdom": "*"
+  },
+  "scripts": {
+	"test": "mocha -u bdd --reporter spec --timeout 5000 tests/specs/*.js"
+  }
+}

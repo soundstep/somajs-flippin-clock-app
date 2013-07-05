@@ -1,6 +1,6 @@
 // simulate events
 // http://stackoverflow.com/questions/6157929/how-to-simulate-mouse-click-using-javascript/6158050#6158050
-function simulate(element, eventName) {
+var simulate = function(element, eventName) {
 	var options = extend(defaultOptions, arguments[2] || {});
 	var oEvent, eventType = null;
 
@@ -56,4 +56,11 @@ var defaultOptions = {
 	metaKey:false,
 	bubbles:true,
 	cancelable:true
+}
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+	module.exports = simulate;
+}
+if (typeof exports !== 'undefined') {
+	exports = simulate;
 }

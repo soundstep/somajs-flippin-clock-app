@@ -1,3 +1,9 @@
+if (typeof require !== 'undefined') {
+	// the following code is to perform the tests in a command line
+	var expect = require('./../../components/expect/expect');
+	var clock = require('./../helpers/dom');
+}
+
 describe("facade tests", function () {
 
 	var app;
@@ -77,14 +83,21 @@ describe("facade tests", function () {
 		var clock = container.querySelector('.clock');
 		app.dispatcher.dispatch('create', 'analog');
 		expect(clock.childNodes.length).to.eql(1);
-		expect(clock.firstChild).to.be.an(HTMLCanvasElement);
+		if (typeof HTMLCanvasElement !== 'undefined') {
+			// this assert do not work from command line
+			expect(clock.firstChild).to.be.an(HTMLCanvasElement);
+		}
 	});
 
 	it('create a polar clock', function() {
 		var clock = container.querySelector('.clock');
 		app.dispatcher.dispatch('create', 'polar');
 		expect(clock.childNodes.length).to.eql(1);
-		expect(clock.firstChild).to.be.an(HTMLCanvasElement);
+		expect(clock.childNodes.length).to.eql(1);
+		if (typeof HTMLCanvasElement !== 'undefined') {
+			// this assert do not work from command line
+			expect(clock.firstChild).to.be.an(HTMLCanvasElement);
+		}
 	});
 
 	it('create a digital clock', function() {

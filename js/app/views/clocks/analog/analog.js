@@ -9,7 +9,11 @@
 
 		var radius = 250;
 		var canvas = document.createElement('canvas');
-		var context = canvas.getContext('2d');
+		var context;
+
+		if (canvas.getContext && canvas.getContext('2d')) {
+			context = canvas.getContext('2d');
+		}
 
 		canvas.width = canvas.height = radius;
 		target.appendChild(canvas);

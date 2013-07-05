@@ -44,7 +44,6 @@ phing
 
 node_modules*
 
-
 .project*
 .classpath*
 .idea*

@@ -1,3 +1,10 @@
+if (typeof require !== 'undefined') {
+	// the following code is to perform the tests in a command line
+	var expect = require('./../../components/expect/expect');
+	var clock = require('./../helpers/dom');
+	var simulate = require('./../helpers/events');
+}
+
 describe("selector view tests", function () {
 
 	var selector;
